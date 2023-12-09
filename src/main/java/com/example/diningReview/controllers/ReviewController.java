@@ -96,42 +96,4 @@ public class ReviewController {
         return ResponseEntity.status(HttpStatus.CREATED).body(review);
     }
 
-    // // Endpoint for an admin to get the list of all dining reviews with the given
-    // // state
-    // @GetMapping("/admin/status")
-    // public ResponseEntity<List<Review>> getPendingApprovalReviews(@RequestParam
-    // ReviewStatus status) {
-    // List<Review> reviews = reviewRepository.findByStatus(status);
-    // return ResponseEntity.ok(reviews);
-    // }
-
-    // // Endpoint for an admin to approve or reject a given dining review
-    // @PutMapping("/admin/approve/{reviewId}")
-    // public ResponseEntity<Review> updateReviewStatus(
-    // @PathVariable Long reviewId,
-    // @RequestBody @Valid Review reviewBody) {
-    // // Fetch the existing review
-    // Review review = reviewRepository.findById(reviewId)
-    // .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Review
-    // not found"));
-
-    // if (reviewBody.getStatus().equals(ReviewStatus.ACCEPTED)) {
-
-    // List<Review> restaurantAcceptedReviews =
-    // reviewRepository.findByStatusAndRestaurantId(
-    // reviewBody.getStatus(),
-    // review.getRestaurantId());
-
-    // // Update restaurant scores
-    // restaurantService.updateRestaurantScores(restaurantAcceptedReviews,
-    // review.getRestaurantId());
-    // }
-    // // Update the review status
-    // review.setStatus(reviewBody.getStatus());
-
-    // // Save the updated review
-    // Review updatedReview = reviewRepository.save(review);
-    // return ResponseEntity.ok(updatedReview);
-    // }
-
 }
